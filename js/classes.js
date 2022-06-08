@@ -80,7 +80,7 @@ class Fighter extends Sprite {
 		}
 		this.color = color;
 		this.isAttacking;
-		this.health = 100;
+		this.health = 200;
 		this.framesCurrent = 0;
 		this.framesElapsed = 0;
 		this.framesHold = 10;
@@ -119,8 +119,8 @@ class Fighter extends Sprite {
 		this.isAttacking = true;
 	}
 
-	takeHit() {
-		this.health -= 20;
+	takeHit(dmg) {
+		this.health -= dmg;
 
 		if (this.health <= 0) {
 			this.switchSprite('death')

@@ -221,7 +221,7 @@ function animate() {
 	if (rectangularCollision({rectangle1: player, rectangle2: enemy}) && 
 		player.isAttacking && player.framesCurrent === 4
    ) {
-		enemy.takeHit();
+		enemy.takeHit(20);
 		player.isAttacking = false;
 		gsap.to('#enemyHealth', {
 			width: enemy.health + '%'
@@ -237,7 +237,7 @@ function animate() {
 	if (rectangularCollision({rectangle1: enemy, rectangle2: player}) && 
 		enemy.isAttacking && enemy.framesCurrent == 2
    ) {
-		player.takeHit();
+		player.takeHit(10);
 		enemy.isAttacking = false; 
 		gsap.to('#playerHealth', {
 			width: player.health + '%'
